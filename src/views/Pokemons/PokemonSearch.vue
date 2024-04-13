@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import Services from '@/services/Services';
+import { onMounted, inject } from 'vue';
+
+const services: Services = inject('services') as Services;
+
+const searchPokemons = async () => {
+  const data = await services.pokemons.searchByLimit({ limit: 24, offset: 0 })
+  console.log(data)
+}
+
+onMounted(() => searchPokemons())
 </script>
 
 <template>
