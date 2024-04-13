@@ -4,7 +4,7 @@ const routerGuard = (to: RouteLocationNormalized, from: RouteLocationNormalized,
   const routeName: RouteRecordName = to?.name || '';
   const hasRoute: boolean = router.hasRoute(routeName);
   if (hasRoute) return next();
-  router.push({ name: 'Pokemon' });
+  router.push({ name: 'Pokemons' });
 };
 
 export default routerGuard;

@@ -2,8 +2,8 @@ import { RouteRecordRaw } from 'vue-router';
 const Pokemon = () => import('@/views/Pokemons/Index.vue');
 
 const route: RouteRecordRaw = {
-  path: '/pokemon',
+  path: '/pokemons',
   component: Pokemon,
-  name: 'Pokemon'
+  name: 'Pokemons'
 };
 export default route;
