@@ -1,6 +1,8 @@
+@import url('./assets/css/custom.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @font-face {
   font-family: 'GoogleFont-bItalic';
