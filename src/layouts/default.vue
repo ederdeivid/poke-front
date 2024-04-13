@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar.vue';
 </script>
 
 <template>
-  <div class="flex h-screen bg-[#f1f1f1] overflow-hidden">
+  <div class="flex h-screen antialiased bg-[#f1f5f9] overflow-hidden">
 
     <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Navbar />

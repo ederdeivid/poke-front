@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PokemonList from './PokemonList.vue';
 </script>
 
 <template>
@@ -11,7 +12,7 @@
       </div>
     </div>
 
-    <!-- todo: next  -->
+    <PokemonList />
   </div>
 </template>
 
