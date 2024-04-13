@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Logo from './Logo.vue';
+
 </script>
 
 <template>
@@ -6,8 +8,12 @@
     <div class="px-4">
       <div class="flex items-center justify-between h-16">
 
-        <div></div>
-        <div></div>
+        <div class="flex">
+          <!-- <span>PokeApi</span> -->
+          <Logo />
+        </div>
+
+        <div class="flex"></div>
       </div>
     </div>
   </nav>
