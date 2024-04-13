@@ -9,7 +9,7 @@ import Navbar from '@/components/Navbar.vue';
       <Navbar />
 
       <main class="grow">
-        <div class="p-4 w-full mx-auto">
+        <div class="p-4 w-full mx-auto px-44">
           <slot />
         </div>
       </main>
