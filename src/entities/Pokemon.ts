@@ -2,6 +2,6 @@ import { PokemonAbilitiesFormatted, TypesEnum } from '@/types/PokemonApiRequestT
 
 export default class PokemonEntity {
   
-  constructor (public id: number, public name: string, public types: TypesEnum[], abilities?: PokemonAbilitiesFormatted[]) {
+  constructor (public id: number, public name: string, public types: TypesEnum[], public abilities: PokemonAbilitiesFormatted[]) {
   }
 }
