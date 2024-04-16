@@ -1,3 +1,25 @@
 .form-input {
   @apply bg-white border focus:ring-0 focus:ring-offset-0 rounded-full text-sm text-slate-800 leading-5 py-4 px-5 border-slate-200 hover:border-slate-300 focus:border-slate-300 shadow-sm placeholder-slate-400 focus-visible:outline-none;
 }
+
+* {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 200, 200, 0.7);
+  width: 5px;
+  height: 5px;
+  border-radius: 15px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
