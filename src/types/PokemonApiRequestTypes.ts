@@ -7,7 +7,7 @@ export interface PokemonsDAO {
   count: number;
   next: string | null;
   previous: string | null;
-  result: PokemonsDAOResult[];
+  results: PokemonsDAOResult[];
 }
 
 export interface PokemonsDAOResult {
@@ -19,7 +19,7 @@ export interface PokemonDetailsDAO {
   id: number;
   name: string;
   abilities: PokemonAbilitiesDAO[]
-  types: []
+  types: PokemonTypesDAO[]
 }
 
 export interface PokemonAbilitiesDAO {
@@ -32,9 +32,53 @@ export interface PokemonAbilitiesDAO {
 export interface PokemonTypesDAO {
   type: {
     name: string;
+    url: string;
   }
 }
 
-export enum PokemonTypes {
-  normal = 1,
+export interface PokemonsFormatted {
+  name: string;
+  id: number;
+  types: TypesEnum[],
+  abilities?: PokemonAbilitiesFormatted[];
+}
+
+export interface PokemonAbilitiesFormatted {
+  name: string;
+  id: number;
+}
+
+export interface PokemonDetailsFormatted extends PokemonsFormatted {
+  ability?: AbilityDetails[]
+}
+
+export interface AbilityDetails {
+  name: string;
+  description: string;
+}
+
+export interface AbilityRequestDetails {
+  id: number;
+  name: string;
+  effect_entries: EffectEntries | EffectEntries[]
+}
+
+export interface EffectEntries {
+  effect: string;
+  language: {
+    name: string;
+  };
+  short_effect: string;
+}
+
+export enum TypesEnum {
+  NORMAL = 'normal',
+  FLYING = 'flying',
+  POISON = 'poison',
+  GROUND = 'ground',
+  FIRE = 'fire',
+  WATER = 'water',
+  GRASS = 'grass',
+  ELECTRIC = 'electric',
+  FAIRY = 'fairy'
 }
