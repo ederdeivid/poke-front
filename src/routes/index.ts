@@ -6,7 +6,7 @@ const routerHistory: RouterHistory = createWebHistory();
 const router: Router = createRouter({
   history: routerHistory,
   routes: [
-    PokemonRoute
+    ...PokemonRoute
   ]
 })
 router.beforeEach((to, from, next) => routerGuard(to, from, next, router));
