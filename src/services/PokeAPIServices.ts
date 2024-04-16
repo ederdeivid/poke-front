@@ -1,4 +1,4 @@
-import { ISearchByLimit, PokemonAbilitiesDAO, PokemonDetailsDAO, PokemonsDAO } from '@/types/PokemonApiRequestTypes';
+import { ISearchByLimit, AbilityRequestDetails, PokemonDetailsDAO, PokemonsDAO } from '@/types/PokemonApiRequestTypes';
 import HttpClient from '@/contracts/HttpClient';
 import QueryString from '@/contracts/QueryString';
 
@@ -14,8 +14,8 @@ export default class PokeAPIServices {
     return pokemon;
   }
 
-  public async searchBySkillId (skillId: number): Promise<PokemonAbilitiesDAO> {
-    const pokemon = await this.httpClient.get<PokemonAbilitiesDAO>(`${this.baseURL}/pokemon/${skillId}`);
+  public async searchBySkillId (skillId: number | string): Promise<AbilityRequestDetails> {
+    const pokemon = await this.httpClient.get<AbilityRequestDetails>(`${this.baseURL}/ability/${skillId}`);
     return pokemon;
   }
 }
