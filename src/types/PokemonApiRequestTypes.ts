@@ -49,7 +49,7 @@ export interface AbilityDetails {
 export interface AbilityRequestDetails {
   id: number;
   name: string;
-  effect_entries: EffectEntries
+  effect_entries: EffectEntries | EffectEntries[];
 }
 
 export interface EffectEntries {
