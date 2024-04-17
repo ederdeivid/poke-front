@@ -1,11 +1,23 @@
-## Definição da estrutura inicial do projeto e das escolhas feitas:
 
->  - **Requisitos**
-    - Node.js 20.10 ou superior
-    - NPM 10.2.3 ou superior
-    - **installing:** npm i (com alguma das versões mencionadas. Isso é obrigatório, os pacotes não serão instalados sem as versões especificadas)
-    - **Running:** npm run dev
+### Requisitos
+> - Node.js 20.10 ou superior
+> - NPM 10.2.3 ou superior
+> - **Installing:** npm i (com alguma das versões mencionadas. Isso é obrigatório, os pacotes não serão instalados sem as versões especificadas)
+> - **Running:** npm run dev
 
+##
+
+### Rotas do sistema
+
+principal: https://ederdeivid.github.io/poke-front/
+> Será redirecionado para a página onde mostrará uma lista com os pokemons
+
+detalhes dos pokemons: https://ederdeivid.github.io/poke-front/#/pokemons/details/:idOuNome
+> Passando o ID ou nome do pokemon no parâmetro da rota é possível trazer seus detalhes diretamente
+
+##
+
+# Definição da estrutura inicial do projeto e das escolhas feitas:
 
 ### Vue 3 vs Nuxt
 Framework escolhido foi Vue 3 (composition API) com typescript, a decisão de utilizar o Vue 3 ao invés de Nuxt é devido a falta de rotas no sistema 3 não aproveitaria o direito a convenção nos nomes das rotas.
