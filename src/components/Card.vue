@@ -12,7 +12,7 @@ const props = defineProps<{ name: string, id: number | string; width?: string; h
         </div>
       </div>
 
-      <div class="font-semibold text-xl text-center mb-4">
+      <div class="font-semibold text-xl text-center mb-4 capitalize">
         <span id="pokemon-name">{{ props.name }}</span>
       </div>
 
