@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "test": "vitest --dom"
   },
