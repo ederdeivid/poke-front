@@ -1,9 +1,11 @@
 ## Definição da estrutura inicial do projeto e das escolhas feitas:
 
->Node.js 20.10 ou superior
->NPM 10.2.3 ou superior
->**installing** npm i (com alguma dessas versões, é obrigatório. Os pacotes não são instalados sem as versões especificadas)
->**Running** npm run dev
+>  - **Requisitos**
+    - Node.js 20.10 ou superior
+    - NPM 10.2.3 ou superior
+    - **installing:** npm i (com alguma das versões mencionadas. Isso é obrigatório, os pacotes não serão instalados sem as versões especificadas)
+    - **Running:** npm run dev
+
 
 ### Vue 3 vs Nuxt
 Framework escolhido foi Vue 3 (composition API) com typescript, a decisão de utilizar o Vue 3 ao invés de Nuxt é devido a falta de rotas no sistema 3 não aproveitaria o direito a convenção nos nomes das rotas.
