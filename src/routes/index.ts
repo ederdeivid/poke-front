@@ -1,10 +1,9 @@
-import { Router, RouterHistory, createRouter, createWebHistory } from 'vue-router';
+import { Router, createRouter, createWebHistory } from 'vue-router';
 import PokemonRoute from './PokemonRoute';
 import routerGuard from './RouterGuard'
 
-const routerHistory: RouterHistory = createWebHistory('/poke-front/');
 const router: Router = createRouter({
-  history: routerHistory,
+  history: createWebHistory('/poke-front/'),
   routes: [
     ...PokemonRoute
   ]
