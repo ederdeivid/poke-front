@@ -7,7 +7,7 @@ const pokemonsMock = {
 }
 describe('Pokemon search view test', () => {
   test('Should call pokemon services when component mount', () => {
-    const wrapper: VueWrapper<PokemonSearchInstanceType> = mountComponent(pokemonsMock);
+    mountComponent(pokemonsMock);
     expect(pokemonsMock.searchByLimit).toBeCalledTimes(1);
   })
 })
