@@ -1,50 +1,31 @@
 <script setup lang="ts">
-const lalala = {
-  1: {
-    name: 'NORMAL',
-    style: 'bg-slate-100'
-  },
-  3: {
-    name: 'FLYING',
-    style: ''
-  },
-  4: {
-    name: 'POISON',
-    style: ''
-  },
-  5: {
-    name: 'GROUND',
-    style: ''
-  },
-  10: {
-    name: 'FIRE',
-    style: ''
-  },
-  11: {
-    name: 'WATER',
-    style: ''
-  },
-  12: {
-    name: 'GRASS',
-    style: ''
-  },
-  13: {
-    name: 'ELECTRIC',
-    style: ''
-  },
-  18: {
-    name: 'FAIRY',
-    style: ''
-  },
-  default: {
-    name: 'DEFAULT',
-    style: ''
-  },
+import { TypesEnum } from '@/types/PokemonApiRequestTypes';
+
+const props = defineProps<{ types: TypesEnum[]; }>();
+
+const pokemonTypesClassMap: Record<TypesEnum, string> = {
+  [TypesEnum.NORMAL]: 'bg-normal',
+  [TypesEnum.FLYING]: 'bg-flying',
+  [TypesEnum.POISON]: 'bg-poison',
+  [TypesEnum.GROUND]: 'bg-ground',
+  [TypesEnum.FIRE]: 'bg-fire',
+  [TypesEnum.WATER]: 'bg-water',
+  [TypesEnum.GRASS]: 'bg-grass',
+  [TypesEnum.ELECTRIC]: 'bg-electric',
+  [TypesEnum.FAIRY]: 'bg-fairy',
+};
+
+const getBgColorByPokemonType = (pokemonType: TypesEnum): string => {
+  return pokemonTypesClassMap[pokemonType] || 'bg-default';
 };
 </script>
 
 <template>
-  <div></div>
+  <div class="flex flex-row justify-center gap-2">
+    <div v-for="(type, idx) in props.types" :class="getBgColorByPokemonType(type)" :key="idx" class="text-white text-sm font-semibold px-4 py-1 uppercase rounded-full">
+      {{ type }}
+    </div>
+  </div>
 </template>
 
 <style lang="css" scoped></style>
