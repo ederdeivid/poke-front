@@ -26,6 +26,7 @@
     "@types/axios": "^0.14.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/test-utils": "^2.4.5",
+    "gh-pages": "^6.1.1",
     "git-commit-msg-linter": "^5.0.7",
     "happy-dom": "^14.7.1",
     "ts-node": "^10.9.2",
