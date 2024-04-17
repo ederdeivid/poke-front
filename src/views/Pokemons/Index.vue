@@ -8,10 +8,8 @@ import PokemonList from './PokemonList.vue';
       <div class="w-full mb-6 lg:mb-0">
       </div>
     </div>
-
     <PokemonList />
   </div>
 </template>
 
-<style lang="css" scoped>
-</style>
+<style lang="css" scoped></style>
