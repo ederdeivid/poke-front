@@ -33,13 +33,13 @@ const searchPokemons = async (offset?: number): Promise<void> => {
 const onSearchByNameOrId = async () => {
   try {
     emit('isLoading', true);
-    pokemonStore.setPokemon([])
+    pokemonStore.setPokemon([]);
     if (!fts.value) return searchPokemons(0);
     const searchPokemonByNameUseCase = new SearchPokemonByNameUseCase(services);
-    const data = await searchPokemonByNameUseCase.execute(fts.value)
-    pokemonStore.setPokemon([data])
+    const data = await searchPokemonByNameUseCase.execute(fts.value);
+    pokemonStore.setPokemon([data]);
   } catch (error) {
-    pokemonStore.setPokemon([])
+    pokemonStore.setPokemon([]);
   } finally {
     emit('isLoading', false);
   }
