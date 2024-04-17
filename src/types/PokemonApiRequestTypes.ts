@@ -36,20 +36,9 @@ export interface PokemonTypesDAO {
   }
 }
 
-export interface PokemonsFormatted {
-  name: string;
-  id: number;
-  types: TypesEnum[],
-  abilities?: PokemonAbilitiesFormatted[];
-}
-
 export interface PokemonAbilitiesFormatted {
   name: string;
   id: number;
-}
-
-export interface PokemonDetailsFormatted extends PokemonsFormatted {
-  ability?: AbilityDetails[]
 }
 
 export interface AbilityDetails {
@@ -60,7 +49,7 @@ export interface AbilityDetails {
 export interface AbilityRequestDetails {
   id: number;
   name: string;
-  effect_entries: EffectEntries | EffectEntries[]
+  effect_entries: EffectEntries
 }
 
 export interface EffectEntries {
