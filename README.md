@@ -45,7 +45,7 @@ Aqui comecei com TDD que é basicamente o desenvolvimento com base nos testes. M
 
 Pensando em uma aplicação com maior carga de dados, eu dificilmente (pra não dizer jamais) utilizaria um componente com Infinit scroll, a página fica lenta com o acúmulo de informações o que trás uma experiência de uso péssima. Mas aqui a carga de dados é pequena, Então não deve gerar nenhum B.O.  
 
-> **Considerações adicionais**: Comecei o projeto com paginação normal, não tinha visto a indicação no de infinito scroll no desafio. 😅
+> **Considerações adicionais**: Comecei o projeto com paginação normal, não tinha visto a indicação no de infinito scroll no desafio.  Aqui optei por fazer o scroll no conteúdo em si, e não na página inteira mantendo apenas o header fixado. Assim o conteúdo que o usuário está vendo nunca muda trazendo algo mais confortável visualmente e usual.
 
 ##
 
