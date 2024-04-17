@@ -1,17 +1,20 @@
 import PokemonEntity from '@/entities/Pokemon';
 import PokemonsFormat from '@/presentation/PokemonsFormat';
 import Services from '@/services/Services';
+import { usePokemonListStore } from '@/stores/UsePokemonListStore';
 import { ISearchByLimit, PokemonDetailsDAO, PokemonsDAO, PokemonsDAOResult } from '@/types/PokemonApiRequestTypes';
 
 export default class SearchPokemonUseCase {
   private pokemonDetails: PokemonDetailsDAO[] = [];
   private pokemonResult!: Array<{ name: string; id: string; }>;
   private pokemonsFormat: PokemonsFormat = new PokemonsFormat();
+  private pokemonListStore = usePokemonListStore();
 
   constructor (private services: Services) { }
 
   public async execute (requestParams: ISearchByLimit): Promise<PokemonEntity[]> {
     const data: PokemonsDAO = await this.services.pokemons.searchByLimit(requestParams);
+    this.pokemonListStore.setRowsNumber(data.count);
     this.getPokemonIdByUrl(data.results);
     await this.loopRequest();
     return this.pokemonsFormat.execute(this.pokemonDetails) as PokemonEntity[];
