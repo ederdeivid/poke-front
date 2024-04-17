@@ -27,9 +27,13 @@ const handleLoadingState = (loadingState: boolean = true) => {
   isLoading.value = loadingState;
 };
 
-const showPokemonDetails = () => {
-  router.push({ name: 'Details', params: { idOrName: 4 } })
+const showPokemonDetails = (pokemonId: number) => {
+  router.push({ name: 'Details', params: { idOrName: pokemonId } })
 }
+
+const sumOfLimitAndOffset = (): number => pokeSearchParams.value.limit + pokeSearchParams.value.offset;
+
+const hasNextPage: ComputedRef<boolean> = computed(() => sumOfLimitAndOffset() < pokemonStore.getRowsNumber);
 </script>
 
 <template>
@@ -39,12 +43,13 @@ const showPokemonDetails = () => {
     <div class="flex w-full justify-center">
       <div class="w-full lg:w-11/12 items-center rounded-sm relative">
 
-        <InfinitScroll :has-next-page="true" @on-scroll-end="goToNextPage">
+        <InfinitScroll :has-next-page="hasNextPage" @on-scroll-end="goToNextPage">
           <template #infinit-scroll-content>
             <EmptyComponent v-if="isPokemonsListEmpty && !isLoading" />
 
             <div v-else class="pokemon-list-grid gap-3">
-              <Card v-for="(pokemon, idx) in pokemonStore.getPokemonList" :key="idx" :name="pokemon.name" :id="pokemon.id" @click.prevent="showPokemonDetails" class="w-52 h-72">
+              <Card v-for="(pokemon, idx) in pokemonStore.getPokemonList" :key="idx" :name="pokemon.name" :id="pokemon.id" @click.prevent="showPokemonDetails(pokemon.id)"
+                class="w-52 h-72">
                 <template #card-footer-content>
                   <Badge :types="pokemon.types" />
                 </template>
