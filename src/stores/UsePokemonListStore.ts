@@ -3,11 +3,13 @@ import { defineStore } from 'pinia';
 
 export const usePokemonListStore = defineStore('pokemonList', {
   state: () => ({
-    pokemonList: [] as PokemonEntity[]
+    pokemonList: [] as PokemonEntity[],
+    rows: 0
   }),
 
   getters: {
-    getPokemonList: (state) => state.pokemonList
+    getPokemonList: (state): PokemonEntity[] => state.pokemonList,
+    getRowsNumber: (state): number => state.rows
   },
 
   actions: {
@@ -17,6 +19,10 @@ export const usePokemonListStore = defineStore('pokemonList', {
 
     setPokemon (newValue: PokemonEntity[]): void {
       this.pokemonList = newValue;
+    },
+
+    setRowsNumber (rows: number): void {
+      this.rows = rows;
     }
   }
 });
