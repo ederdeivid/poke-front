@@ -28,7 +28,7 @@ E o também quase não tem conteúdo para o SSR ser um diferencial na renderiza�
 
 ### Axios vs Fetch
 
-Escolhi aqui apenas por preferência pessoal, porém, fiz de uma maneira desacoplada o suficiente (utilizando alguns ladrões do SOLID) para poder trocar isso a qualquer momento sem que quebre nada no sistema e com o menor esforço possível.
+Escolhi aqui apenas por preferência pessoal, porém, fiz de uma maneira desacoplada o suficiente (utilizando alguns padrões do SOLID e Clean Archtecture) para poder trocar isso a qualquer momento sem que quebre nada no sistema e com o menor esforço possível.
 (Uma lib para requisição aqui com apenas 3 endpoints a serem consumidos parece overengineering, né)
 
 ##
