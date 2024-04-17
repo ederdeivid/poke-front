@@ -1,18 +1,17 @@
 import Services from '@/services/Services';
-import { AbilityDetails, AbilityRequestDetails, EffectEntries } from '@/types/PokemonApiRequestTypes';
+import { AbilityRequestDetails, EffectEntries } from '@/types/PokemonApiRequestTypes';
 
 export default class SearchPokemonSkillsUseCase {
   private skills: AbilityRequestDetails[] = [];
-  private lalala = [];
 
   constructor (private services: Services) { };
 
-  public async execute (skillsList: Array<{ name: string; id: string; }>) {
+  public async execute (skillsList: Array<{ name: string; id: number; }>) {
     this.skills = await Promise.all(skillsList.map(skill => this.searchSkills(skill.id)));
-    console.log(this.getSkillsFilteredOnlyByEN());
+    return this.getSkillsFilteredOnlyByEN();
   }
 
-  private searchSkills (skillId: string): Promise<AbilityRequestDetails> {
+  private searchSkills (skillId: number): Promise<AbilityRequestDetails> {
     return this.services.pokemons.searchBySkillId(skillId);
   }
 
@@ -27,6 +26,4 @@ export default class SearchPokemonSkillsUseCase {
   private searchENLanguageSkill (effectsInfo: EffectEntries[]): EffectEntries {
     return effectsInfo.find(effectInfo => effectInfo.language.name === 'en') as EffectEntries;
   }
-
-  private idk () {}
 }
