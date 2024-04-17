@@ -2,7 +2,7 @@ import { Router, RouterHistory, createRouter, createWebHistory } from 'vue-route
 import PokemonRoute from './PokemonRoute';
 import routerGuard from './RouterGuard'
 
-const routerHistory: RouterHistory = createWebHistory('/poke-front');
+const routerHistory: RouterHistory = createWebHistory('/poke-front/');
 const router: Router = createRouter({
   history: routerHistory,
   routes: [
