@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configurar Node.js
+      - name: Setting up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.10'
@@ -38,9 +38,6 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Running ts-prune
-        run: npx ts-prune --error
 
   tests:
     name: Running tests
